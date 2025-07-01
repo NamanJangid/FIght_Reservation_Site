@@ -1,0 +1,79 @@
+<div class="topnav">
+    <a routerLink=''>Home</a>
+</div>
+<div class = "homepage">
+<div class = "homepage">
+<div class="container"> 
+    <h3>Registration</h3>
+    <form class="fo" #userRegister="ngForm" (ngSubmit)="addUser()">
+        <label>Title</label><br>
+        <select id="title" name="title" [(ngModel)]="user.title">
+            <option value="MR">MR</option>
+            <option value="MS">MS</option>
+            <option value="MRS">MRS</option>
+        </select><br><br>
+    
+        <label>First Name</label><br>
+        <input type="text" 
+        name="firstName" 
+        required minlength="2" 
+        #firstname="ngModel" 
+        [(ngModel)]="user.firstName" /><br>
+        <div *ngIf="userRegister.submitted && firstname.invalid" class="error">
+            <div *ngIf="firstname.errors.required">Required*</div> 
+            <div *ngIf="firstname.errors.minlength">Mininmum 2 characters</div>
+        </div><br>
+        
+        <label>Last Name</label><br>
+        <input type="text" 
+        name="lastName"
+        required minlength="3" 
+        #lastname="ngModel" 
+        [(ngModel)]="user.lastName" /><br>
+        <div *ngIf="userRegister.submitted && firstname.invalid" class="error">
+            <div *ngIf="lastname.errors.required">Required*</div> 
+            <div *ngIf="lastname.errors.minlength">Mininmum 3 characters</div>
+        </div><br>
+        
+        <label>Email</label><br>
+        <input type="email" 
+        name="email"
+        required
+        pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+        #email="ngModel" 
+        [(ngModel)]="user.email" /><br>
+        <div *ngIf="userRegister.submitted && email.invalid" class="error">
+            <div *ngIf="email.errors.required">Required*</div>
+            <div *ngIf="email.errors.pattern">Invalid Email</div>
+        </div><br>
+    
+        <label>Password</label><br>
+        <input type="password" 
+        name="password"
+        required
+        pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})"
+        #password="ngModel"
+        [(ngModel)]="user.password" /><br>
+        <div *ngIf="userRegister.submitted && password.invalid" class="error">
+            <div *ngIf="password.errors.required">Required*</div>
+            <div *ngIf="password.errors.pattern">Invalid Password</div>
+        </div><br>
+    
+        <label>Date of Birth</label><br>
+        <input type="date" name="dateOfBirth" [(ngModel)]="user.dateOfBirth" /><br><br>
+
+        <label>Contact No</label><br>
+        <input type="number" 
+        name="contact"
+        required
+        pattern="^[7-9][0-9]{9}"
+        #contact="ngModel" 
+        [(ngModel)]="user.contact" /><br>
+        <div *ngIf="userRegister.submitted && contact.invalid" class="error">
+            <div *ngIf="contact.errors.required">Required*</div>
+            <div *ngIf="contact.errors.pattern">Invalid contact number</div>
+        </div><br>
+
+        <button type="submit" class="btnclr">Register</button>
+    </form>
+</div>

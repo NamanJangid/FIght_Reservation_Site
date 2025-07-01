@@ -1,0 +1,13 @@
+<div class="topnav">
+    <a routerLink=''>Home</a>
+</div>
+<div class="container">
+    <h3>Admin Login</h3>
+    <form (ngSubmit)="loginCheck()" class="fo">
+        <label>Username</label><br>
+        <input type="text" name="username" [(ngModel)]="admin.username" /><br><br>
+        <label>Password</label><br>
+        <input type="password" name="password" [(ngModel)]="admin.password" /><br><br>
+        <button type="submit" class="btnclr">Login</button>
+    </form>
+</div>

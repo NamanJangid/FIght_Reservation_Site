@@ -1,0 +1,30 @@
+.tabl{
+    text-align: center;
+    border-collapse: collapse;
+    column-width: 150px;
+    border: solid black;
+    padding: 5px;
+    margin: auto;
+}
+
+.active{
+    padding: 5px;
+    color: white;
+    background-color: greenyellow;
+    border-radius: 10%;
+}
+
+.inactive{
+    padding: 5px;
+    color: white;
+    background-color: red;
+    border-radius: 10%;
+}
+
+
+.btnclr{
+    padding: 5px;
+    color: white;
+    background-color: burlywood;
+    border-radius: 10%;
+}

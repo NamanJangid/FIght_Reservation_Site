@@ -1,0 +1,23 @@
+<div class = "top" *ngFor = "let f of flights">
+    <div class ="center">
+        <h3>Seat Details</h3>
+        Flight No : {{f.flightNo}}<br>
+        Flight Destination: {{f.source}}<br>
+        Flight Source: {{f.destination}}<br>
+    </div>
+</div>
+<table>
+    <tr *ngFor="let row of allSeats">
+        <td *ngFor="let seat of row">
+            <input class="seat" type="checkbox" name="{{seat.seatNo}}" [value]="seat.seatNo" [disabled]="!seat.status" (change)="getSeatNo($event, seat.seatNo)"> {{seat.seatNo}}
+        </td>
+    </tr>
+</table>
+
+<hr>
+<div>
+    Selected Seats are : <span class = "selected" *ngFor="let seat of selectedSeats"><b> {{seat}} </b></span>
+</div>
+<div class = "btn1">
+    <button  class = "btn" (click)="goToPayment()">Proceed For Payment</button>
+</div>

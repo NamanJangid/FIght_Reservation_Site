@@ -1,0 +1,51 @@
+.container{
+    padding: 20px 15px;
+    margin: 20px auto;
+    width: 480px;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+.row{
+    margin-top: 10px;
+}
+
+.col{
+    float: left;
+    border: 1px solid black;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+}
+.flight-info{
+    border: 1px solid grey;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    line-height: 3;
+}
+
+.row-content{
+    display: inline;
+    align-items: center;
+    justify-content: space-between;
+}
+.search-btn, .reset-btn{
+    border: none;
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    margin-left: 15px;
+}
+.search-btn{
+    background:  burlywood;
+}
+.reset-btn{
+    background: rgb(133, 133, 133);
+}
+.final-book{
+    float: right;
+    margin-right: 50px;
+    border: none;
+    height: 40px;
+    font-size: 16px;
+    background:  burlywood;
+}

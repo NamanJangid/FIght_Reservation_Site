@@ -1,0 +1,28 @@
+<div class="container">
+    <h3>Add Flight</h3>
+    <form class="fo" #addingFlight="ngForm" (ngSubmit)="addFlight()">
+        <label>Source</label><br>
+        <select id="source" name="source" [(ngModel)]="flight.source">
+            <option *ngFor="let s of source" [value]="s"> {{ s }} </option>
+        </select><br><br>
+        
+        <label>Destination</label><br>
+        <select id="destination" name="destination" [(ngModel)]="flight.destination">
+            <option *ngFor="let d of destination" [value]="d"> {{ d }} </option>
+        </select><br><br>
+        
+        <label>Seat Capacity</label><br>
+        <input type="number" name="availableSeats" [(ngModel)]="flight.availableSeats" /><br><br>
+        
+        <label>Duration(Minutes)</label>
+        <input type="number" name="duration" [(ngModel)]="flight.duration" /><br><br>
+
+        <label>Status</label><br>
+        <select id="status" name="status" [(ngModel)]="flight.status">
+            <option value="ACTIVE">ACTIVE</option>
+            <option value="INACTIVE">INACTIVE</option>
+        </select><br><br>
+
+        <button type="submit" class="btnclr">Add Flight</button>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<h3 style="margin-left: 23%;">Detail</h3>
+<table class="tabl">
+    <tr class="tabl">
+        <th class="tabl" *ngFor="let h of headers">
+            <b>{{h}}</b>
+        </th>
+    </tr>
+    <tr class="tabl" *ngFor="let f of flight">
+        <td class="tabl">
+            {{ f.flightNo }}
+        </td>
+        <td class="tabl">
+            {{ f.source }}
+        </td>
+        <td class="tabl">
+            {{ f.destination }}
+        </td>
+        <td class="tabl">
+            {{ f.duration }}
+        </td>
+        <td class="tabl" >
+            <button (click)="change(f)" >
+                <div class="active" *ngIf="f.status=='ACTIVE'"> 
+                </div>
+                <div class="inactive" *ngIf="f.status=='INACTIVE'"> 
+                </div>   
+            </button>
+        </td>
+    </tr>
+</table>

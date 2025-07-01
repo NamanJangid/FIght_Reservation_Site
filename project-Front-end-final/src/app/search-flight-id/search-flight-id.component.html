@@ -1,0 +1,38 @@
+<div class="container">
+    <h3>Search Flight by ID</h3>
+    <form class="fo" #searchFlight="ngForm" (ngSubmit)="search()">
+        <label>Flight Id </label><br>
+        <input type="number" name="id" [(ngModel)]="searchFlightId.id" /><br><br>
+        <button type="submit" class="btnclr">Search</button>
+    </form>
+</div>
+
+
+
+<div *ngIf="show">
+    <h3 style="margin-left: 23%;">Detail</h3>
+    <table class="tabl">
+        <tr class="tabl">
+            <th class="tabl" *ngFor="let h of headers">
+                <b>{{h}}</b>
+            </th>
+        </tr>
+        <tr class="tabl">
+            <td class="tabl">
+                {{ flight.flightNo }}
+            </td>
+            <td class="tabl" >
+                {{ flight.source }}
+            </td>
+            <td class="tabl">
+                {{ flight.destination }}
+            </td>
+            <td class="tabl">
+                {{ flight.duration }}
+            </td>
+            <td class="tabl">
+                {{ flight.status }}
+            </td>
+        </tr>
+    </table> 
+</div>

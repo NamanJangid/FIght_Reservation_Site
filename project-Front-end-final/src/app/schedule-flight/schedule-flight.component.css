@@ -1,0 +1,10 @@
+.container{
+    border: 1px solid grey;
+    margin: 16px auto;
+    width: 560px;
+    padding: 12px 16px;
+}
+.row{
+    display: flex;
+    line-height: 2;
+}

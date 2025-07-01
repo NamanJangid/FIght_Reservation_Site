@@ -1,0 +1,46 @@
+<div class="container">
+    <h3>Search Flight by Source and Destination</h3>
+    <form class="fo" #searchFlight="ngForm" (ngSubmit)="search()">
+    
+        <label>Source</label><br>
+        <select id="source" name="source" [(ngModel)]="searchFlightSDDto.source">
+            <option *ngFor="let s of source" [value]="s"> {{ s }} </option>
+        </select><br><br>
+        
+        <label>Destination</label><br>
+        <select id="destination" name="destination" [(ngModel)]="searchFlightSDDto.destination">
+            <option *ngFor="let d of destination" [value]="d"> {{ d }} </option>
+        </select><br><br>
+    
+        <button type="submit" class="btnclr">Search</button>
+    </form>
+</div>
+
+
+<div *ngIf="show">
+    <h3 style="margin-left: 23%;">Detail</h3>
+    <table class="tabl">
+        <tr class="tabl">
+            <th class="tabl" *ngFor="let h of headers">
+                <b>{{h}}</b>
+            </th>
+        </tr>
+        <tr *ngFor="let flight of flights" class="tabl">
+            <td class="tabl">
+                {{ flight.flightNo }}
+            </td>
+            <td class="tabl" >
+                {{ flight.source }}
+            </td>
+            <td class="tabl">
+                {{ flight.destination }}
+            </td>
+            <td class="tabl">
+                {{ flight.duration }}
+            </td>
+            <td class="tabl">
+                {{ flight.status }}
+            </td>
+        </tr>
+    </table> 
+</div>

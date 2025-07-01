@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Ticket Bookings</h2>
+    <div class="row">
+        <label>Enter Ticket No : </label>
+        <input type="number" name="ticketNo" [(ngModel)]=ticketNo >
+        <span><button class="fetch" (click)="fetchPassengersDetails()">Fetch Details</button></span>
+    </div>
+</div>
+<div class="update" *ngIf="message">
+    <hr>{{ message }}<hr>
+</div>
+<div class="passengers" *ngIf="!message">
+    <div class="passenger" *ngFor="let passenger of passengers">
+        <div class="attribute">
+            <label>Passenger Id : </label>{{passenger.passengerId}} 
+        </div>
+        <div class="attribute">
+            <label>Passenger Name : </label>{{passenger.name}}
+        </div> 
+        <span class="cancel-btn">
+            <button (click)="cancelPassengerReservation(passenger.passengerId)">Cancel Reservation</button>
+        </span>
+    </div>
+</div>
+<div class="cancel-all">
+    <button class="all" (click)="cancelReservation()">Cancel Reservation</button>
+</div>

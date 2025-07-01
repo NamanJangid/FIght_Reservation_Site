@@ -1,0 +1,54 @@
+
+  
+<form #f = "ngForm" (ngSubmit) = "f.form.valid && onsubmit()" class="container" class="fo">
+  <h1>PAYMENT</h1>
+  <div>Payment Mode:
+    <select name="payment" id="payment" [(ngModel)]=payment.cardType>
+      <option value="">SELECT MODE</option>
+        <option value="CREDIT">CREDIT CARD</option>
+        <option value="DEBIT">DEBIT CARD</option>
+      </select> <br/>
+  </div>
+  <div>
+    
+    card holder : <input type="text" name="cardholder" [(ngModel)]=payment.cardHolder required minlength="3" pattern="[A-Z]{3,20}" #cardholder="ngModel"  /><br />
+      <div *ngIf="cardholder.invalid && f.submitted"> 
+          <div *ngIf="cardholder.errors.required"> Name is required</div>
+          <div *ngIf="cardholder.errors.minlength"> Name should contain atleast 3 charecters</div>
+          <div *ngIf ="cardholder.errors.pattern">Takes only aplhabet's </div>
+      </div>
+  </div>
+  <div >
+    Card number:<input type="text" class="input" name="cardNumber" [(ngModel)]=payment.cardNumber  pattern="([0-9]{10})"  placeholder=""  #cardNumber="ngModel"/><br />
+    <div *ngIf="cardNumber.invalid && f.submitted"> 
+      <div *ngIf="cardNumber.errors.required"> card number is required</div>
+      <div *ngIf="cardNumber.errors.minlength"> card should contain atleast 16 charecters</div>
+      <div *ngIf ="cardNumber.errors.pattern">Takes Only Digits</div>
+  </div>
+</div>
+  <div >
+    Expiry Date:<input type="text" class="input" name="expiryDate" [(ngModel)]=payment.expiryDate  placeholder="" required pattern="^(0[1-9]|1[0-2])\/?([0-9]{2})" #expiryDate="ngModel"/><br />
+    <div *ngIf="expiryDate.invalid && f.submitted"> 
+      <div *ngIf="expiryDate.errors.required"> Expiry Date is required</div>
+      <div *ngIf="expiryDate.errors.minlength"> Expiry Date should contain atleast 4 charecters</div>
+      <div *ngIf ="cardNumber.errors.pattern">Takes Only number</div>
+  </div>
+</div>
+  <div >
+    CVC:<input type="number" class="input" name="cvc" [(ngModel)]=payment.cvc  placeholder="" required pattern="[0-9]{3}" #cvc="ngModel"/><br />
+    <div *ngIf="cvc.invalid && f.submitted"> 
+      <div *ngIf="cvc.errors.required"> CVC is required</div>
+      <div *ngIf="cvc.errors.minlength"> CVC should contain 3 charecters</div>
+      <div *ngIf ="cvc.errors.pattern">Takes Only numbers</div>
+  </div>
+</div>
+  <div >
+    Total Fare:<input type="number" class="input" name="totalFare" [(ngModel)]=payment.totalFare  placeholder="" required pattern="^[1-9][0-9]{2,5}" #totalFare="ngModel"/><br />
+    <div *ngIf="totalFare.invalid && f.submitted"> 
+      <div *ngIf="totalFare.errors.required"> Total Fare is required</div>
+      <div *ngIf="totalFare.errors.minlength"> Name should contain atleast 3 charecters</div>
+      <div *ngIf ="totalFare.errors.pattern">Takes Only number</div>
+  </div>
+</div>
+ <div><button type ="submit" class="btnclr">Submit</button> </div>
+</form>

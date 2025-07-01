@@ -1,0 +1,48 @@
+.top
+{
+    margin: auto;
+    align-content: center;
+}
+.center
+{
+    text-align: center;
+    margin: 1%;
+}
+.form
+{
+    border: solid black;
+    align-content: center;
+    text-align:left;
+    padding: 20px;
+    width: 200px;
+    height: auto;
+    margin: auto;
+}
+.add
+{
+    padding: 5px;
+    color: white;
+    background-color: greenyellow;
+    border-radius: 10%;
+
+}
+.sub
+{
+    padding: 5px;
+    color: white;
+    background-color: red;
+    border-radius: 10%;
+}
+.btn
+{
+    padding: 5px;
+    color: white;
+    background-color: burlywood;
+    border-radius: 10%;
+    align-content: center;
+}
+.btn1
+{
+    margin: 2% ;
+    text-align: center;
+}

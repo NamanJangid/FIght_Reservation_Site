@@ -1,0 +1,28 @@
+.container{
+    width: 560px;
+    padding: 12px 20px;
+    margin: 25px auto;
+    border: solid 1px grey;
+    border-radius: 5px;
+}
+.row{
+    display: flex;
+}
+.cancel-all{
+    float: right;
+}
+.all{
+    border: none;
+    background-color:rgb(235, 86, 86);
+    color: white;
+    height: 40px;
+    font-size: 16px;
+}
+.fetch{
+    margin-left: 25px;
+    border: none;
+    background-color:rgb(36, 0, 168);
+    color: white;
+    height: 24px;
+    font-size: 14px;
+}

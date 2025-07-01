@@ -1,0 +1,37 @@
+<div class="container">
+    <form (ngSubmit)="addSchedule()">
+        <h3>Adding Schedule for Flight</h3>
+        <div class="row">
+            <label for="">Flight No : </label>
+            <input type="number" name="flightNo" [(ngModel)]=schedule.flightNo>
+        </div>
+        <div class="row">
+            <div>
+                <label for="">From : </label>
+                <input type="date" name="fromDate" [(ngModel)]=schedule.fromDate>
+            </div>
+            <div>
+                <label style="margin-left: 20px;">To : </label>
+                <input type="date" name="toDate" [(ngModel)]=schedule.toDate>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <label for="">Departure : </label>
+                <input type="time" name="departure" [(ngModel)]=schedule.departureTime>
+            </div>
+            <div>
+                <label style="margin-left: 20px;">Return Departure : </label>
+                <input type="time" name="returnDeparture" [(ngModel)]=schedule.returnDepartureTime>
+            </div>
+        </div>    
+        <div class="row">
+            <button style="border: none;height: 40px;width: 150px; margin-right: 20px; background: burlywood; color: white;" type="submit">Add Schedule</button>
+            <button style="border: none;height: 40px; width: 150px; margin-right: 20px; background: grey; color: white;" type="reset">Reset</button>
+        </div>  
+    </form>
+</div>
+<div class="message">
+    {{message}}
+</div>
+

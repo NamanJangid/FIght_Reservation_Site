@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row" *ngFor="let flight of selectedFlights">
+        <div class="attribute">
+            <label for="">Flight No : </label> {{flight.flightNo}}
+        </div>
+        <div class="attribute">
+            <label for="">Source : </label> {{flight.source}}
+        </div>
+        <div class="attribute">
+            <label for="">Destination : </label> {{flight.destination}}
+        </div>
+        <div class="attribute">
+            <label for="">Departure : </label> {{flight.departure | date:'shortTime'}}
+        </div>
+        <div class="attribute">
+            <label for="">Arrival : </label> {{flight.arrival | date:'shortTime'}}
+        </div>
+    </div>  
+    <div class="proceed">
+        <button class="p-btn" (click)="proceed()">Proceed..</button>
+    </div>  
+</div>
